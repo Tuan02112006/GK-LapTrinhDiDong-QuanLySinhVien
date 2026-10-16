@@ -31,6 +31,7 @@ fun main() {
         3.75
     )
 
+
     println(student)
     println(isValidGpa(student.gpa))
     println(student.gpa.toScale10())
