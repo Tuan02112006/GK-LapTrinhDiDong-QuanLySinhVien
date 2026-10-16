@@ -23,6 +23,15 @@ fun getAcademicRank(gpa: Double): String {
     }
 }
 
+fun printStudentInfo(student: Student) {
+    println("Ma sinh vien: ${student.id}")
+    println("Ho ten: ${student.name}")
+    println("Lop: ${student.className}")
+    println("GPA: ${student.gpa}")
+    println("Diem thang 10: ${student.gpa.toScale10()}")
+    println("Hoc luc: ${getAcademicRank(student.gpa)}")
+}
+
 fun main() {
     val student = Student(
         "SV001",
@@ -31,7 +40,12 @@ fun main() {
         3.75
     )
 
-
+    if (isValidGpa(student.gpa)) {
+        printStudentInfo(student)
+    } else {
+        println("GPA khong hop le")
+    }
+    
     println(student)
     println(isValidGpa(student.gpa))
     println(student.gpa.toScale10())
