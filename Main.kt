@@ -9,6 +9,10 @@ fun isValidGpa(gpa: Double): Boolean {
     return gpa >= 0.0 && gpa <= 4.0
 }
 
+fun Double.toScale10(): Double {
+    return this * 10 / 4
+}
+
 fun main() {
     val student = Student(
         "SV001",
@@ -19,4 +23,5 @@ fun main() {
 
     println(student)
     println(isValidGpa(student.gpa))
+    println(student.gpa.toScale10())
 }
