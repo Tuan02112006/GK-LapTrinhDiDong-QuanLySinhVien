@@ -5,6 +5,10 @@ data class Student(
     val gpa: Double
 )
 
+fun isValidGpa(gpa: Double): Boolean {
+    return gpa >= 0.0 && gpa <= 4.0
+}
+
 fun main() {
     val student = Student(
         "SV001",
@@ -14,4 +18,5 @@ fun main() {
     )
 
     println(student)
+    println(isValidGpa(student.gpa))
 }
